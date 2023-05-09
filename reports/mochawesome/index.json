@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-05-09T16:57:02.087Z",
+    "end": "2023-05-09T16:57:14.896Z",
+    "duration": 12809,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb686d5f-825b-4b41-868f-eded42e846e7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\spec.cy.ts",
+      "file": "cypress\\e2e\\spec.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+          "title": "Star Wars Search App",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "searches for a valid character and displays their information",
+              "fullTitle": "Star Wars Search App searches for a valid character and displays their information",
+              "timedOut": null,
+              "duration": 3350,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Luke Skywalker');\ncy.get('#people').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Luke Skywalker');\ncy.contains('Gender: male');\ncy.contains('Birth year: 19BBY');\ncy.contains('Eye color: blue');\ncy.contains('Skin color: fair');",
+              "err": {},
+              "uuid": "8ed5b8d8-286f-4523-b2ae-87480b38c311",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "searches for an invalid character and displays \"Not found\"",
+              "fullTitle": "Star Wars Search App searches for an invalid character and displays \"Not found\"",
+              "timedOut": null,
+              "duration": 848,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Invalid Character');\ncy.get('#people').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Not found');",
+              "err": {},
+              "uuid": "921e575f-0ddd-4a1b-a97a-a242925c78a6",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "searches for a valid planet and displays its information",
+              "fullTitle": "Star Wars Search App searches for a valid planet and displays its information",
+              "timedOut": null,
+              "duration": 1286,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Alderaan');\ncy.get('#planets').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Alderaan');\ncy.contains('Population: 2000000000');\ncy.contains('Climate: temperate');\ncy.contains('Gravity: 1 standard');",
+              "err": {},
+              "uuid": "b65e606d-2477-4ff8-92fe-1ae7499ef98c",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "searches for an invalid planet and displays \"Not found\"",
+              "fullTitle": "Star Wars Search App searches for an invalid planet and displays \"Not found\"",
+              "timedOut": null,
+              "duration": 1200,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Invalid Planet');\ncy.get('#planets').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Not found');",
+              "err": {},
+              "uuid": "8e3667fd-0404-47d4-8e4e-0da83608aba4",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "clears previous search results when a new search is made",
+              "fullTitle": "Star Wars Search App clears previous search results when a new search is made",
+              "timedOut": null,
+              "duration": 1639,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Luke Skywalker');\ncy.get('#people').check();\ncy.get('[type=\"submit\"]').click();\ncy.get('#query').clear().type('Alderaan');\ncy.get('#planets').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Alderaan');\ncy.contains('Population');\ncy.contains('Climate');\ncy.contains('Gravity');\ncy.contains('Luke Skywalker').should('not.exist');",
+              "err": {},
+              "uuid": "43564e9c-220d-48d6-8263-fc4a269a84f3",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "returns multiple results when there are multiple matches",
+              "fullTitle": "Star Wars Search App returns multiple results when there are multiple matches",
+              "timedOut": null,
+              "duration": 1263,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Darth');\ncy.get('#people').check();\ncy.get('[type=\"submit\"]').click();\ncy.contains('Darth Vader');\ncy.contains('Darth Maul');",
+              "err": {},
+              "uuid": "67e49570-ea67-4f9e-8e2c-fff90ded60f9",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can search for results by pressing enter on the search field",
+              "fullTitle": "Star Wars Search App can search for results by pressing enter on the search field",
+              "timedOut": null,
+              "duration": 1421,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#query').type('Luke Skywalker{enter}');\ncy.get('#people').check();\ncy.contains('Luke Skywalker');\ncy.contains('Gender: male');\ncy.contains('Birth year: 19BBY');\ncy.contains('Eye color: blue');\ncy.contains('Skin color: fair');",
+              "err": {},
+              "uuid": "17ab7d13-696a-4160-850a-b2f8792c4294",
+              "parentUUID": "2c3e39a5-aaaa-49c8-bb72-67e53eb722a5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8ed5b8d8-286f-4523-b2ae-87480b38c311",
+            "921e575f-0ddd-4a1b-a97a-a242925c78a6",
+            "b65e606d-2477-4ff8-92fe-1ae7499ef98c",
+            "8e3667fd-0404-47d4-8e4e-0da83608aba4",
+            "43564e9c-220d-48d6-8263-fc4a269a84f3",
+            "67e49570-ea67-4f9e-8e2c-fff90ded60f9",
+            "17ab7d13-696a-4160-850a-b2f8792c4294"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11007,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "index",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "C:\\Users\\zhouq\\OneDrive\\Documents\\fedex_qa_assignment\\reports\\mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "index",
+        "reportTitle": "Cypress Tests",
+        "inline": false,
+        "tsConfig": "tsconfig.json"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
